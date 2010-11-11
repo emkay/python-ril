@@ -100,9 +100,10 @@ class ReadItLater:
         
         res = False
         res = urllib2.urlopen(url)
-        self.last_response = res
-
+        self.last_response = res.read()
+        
         # debug statements
         #print res.read()
         #print res.geturl()
         #print res.info()
+        return self.last_response
